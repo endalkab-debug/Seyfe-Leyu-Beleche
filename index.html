@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ሰይፈ ልዩ በለጬ | ፕሪምየም ጫት እና መጠጦች</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a472a;
+            --secondary: #d4af37;
+            --accent: #c8a415;
+            --light: #f8f8f8;
+            --dark: #0d1f0d;
+            --text: #333333;
+            --border: #e8e6e1;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --whatsapp: #25D366;
+            --telegram: #0088cc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans Ethiopic', 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, .logo-text, .section-title, .category-title {
+            font-family: 'Noto Sans Ethiopic', 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 71, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        header.scrolled {
+            padding: 0.7rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover .logo-icon {
+            transform: scale(1.05);
+        }
+        
+        .logo-text {
+            color: white;
+        }
+        
+        .logo-text h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .logo-text .amharic-name {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(13, 31, 13, 0.7), rgba(26, 71, 42, 0.8)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+        
+        .hero .amharic-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover {
+            color: var(--dark);
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+        /* Menu Section */
+        .menu-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 3.2rem;
+            color: var(--primary);
+            display: inline-block;
+            padding: 0 20px;
+            background: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border);
+            z-index: 0;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 20px auto 50px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        /* Category Cards */
+        .category-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .category-icon {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary), #2d5a3d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 4rem;
+        }
+        
+        .category-content {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .category-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .category-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .category-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Product Grid */
+        .category-section {
+            margin-bottom: 100px;
+            scroll-margin-top: 120px;
+        }
+        
+        .category-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .category-title i {
+            color: var(--secondary);
+            font-size: 2rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .product-header {
+            padding: 25px;
+            background: linear-gradient(135deg, var(--primary), #2d5a3d);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .product-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .product-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .product-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .quantity-options {
+            margin-top: auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .quantity-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .quantity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .quantity-name {
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .quantity-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        /* Drinks Grid */
+        .drinks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .drink-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .drink-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--secondary);
+        }
+        
+        .drink-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .drink-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .drink-price {
+            background: #f0f7f0;
+            color: var(--primary);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 1px solid #d4e8d4;
+        }
+        
+        .drink-type {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .drink-desc {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 10px;
+        }
+        
+        /* Order Section - Enhanced Version */
+        .order-section {
+            background: linear-gradient(rgba(26, 71, 42, 0.95), rgba(13, 31, 13, 0.98)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
+            color: white;
+        }
+        
+        .order-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .order-header {
+            background: var(--primary);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .order-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .order-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+        
+        .order-form {
+            padding: 40px;
+        }
+        
+        /* Search Filter */
+        .search-filter {
+            margin-bottom: 20px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            font-family: 'Noto Sans Ethiopic', sans-serif;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .category-filter-btn {
+            padding: 8px 15px;
+            background: #f5f5f5;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+        
+        .category-filter-btn:hover {
+            background: #e8e8e8;
+        }
+        
+        .category-filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Interactive Order Items */
+        .order-items-container {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .order-items-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .order-items-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .order-items-container::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+        
+        .interactive-item {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 15px;
+            align-items: center;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+        }
+        
+        .item-name-large {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .item-price-large {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+            min-width: 100px;
+            text-align: right;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--primary);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .quantity-btn:hover {
+            background: var(--secondary);
+        }
+        
+        .quantity-display {
+            width: 60px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+            background: white;
+        }
+        
+        /* Quick Add Buttons */
+        .quick-add-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .quick-add-btn {
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-add-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            font-family: 'Noto Sans Ethiopic', sans-serif;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        .order-total {
+            background: #f0f7e9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: right;
+            border: 2px solid var(--secondary);
+        }
+        
+        .total-text {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .total-amount {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* Dual Submit Buttons */
+        .order-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .submit-order {
+            border: none;
+            padding: 18px 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .whatsapp-btn {
+            background: var(--whatsapp);
+            color: white;
+        }
+        
+        .telegram-btn {
+            background: var(--telegram);
+            color: white;
+        }
+        
+        .submit-order::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .submit-order:hover::before {
+            left: 0;
+        }
+        
+        .submit-order span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .submit-order:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #c3e6cb;
+            display: none;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-section h3 {
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero .amharic-title {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 25px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+            
+            .interactive-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .item-price-large {
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                height: 80vh;
+                padding-top: 150px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero .amharic-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+            
+            .category-title {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .drinks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-container {
+                margin: 0 20px;
+            }
+            
+            .order-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .quantity-selector {
+                justify-content: space-between;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo-text .amharic-name {
+                font-size: 1.4rem;
+            }
+            
+            nav a {
+                font-size: 0.95rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero .amharic-title {
+                font-size: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .category-card {
+                margin: 0 10px;
+            }
+            
+            .submit-order {
+                padding: 15px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>ሰይፈ ልዩ በለጬ</h1>
+                        <div class="amharic-name">Seyfe Leyu Beleche</div>
+                        <div class="tagline">ፕሪምየም ጫት እና መጠጦች</div>
+                    </div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-home nav-icon"></i> ዋና ገጽ</a></li>
+                        <li><a href="#menu"><i class="fas fa-utensils nav-icon"></i>ሜኑ</a></li>
+                        <li><a href="#khat"><i class="fas fa-leaf nav-icon"></i> ጫት</a></li>
+                        <li><a href="#cigarettes"><i class="fas fa-smoking nav-icon"></i> ሲጋራ</a></li>
+                        <li><a href="#drinks"><i class="fas fa-wine-bottle nav-icon"></i> መጠጥ</a></li>
+                        <li><a href="#order"><i class="fas fa-shopping-cart nav-icon"></i> ትእዛዝ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>ሰይፈ ልዩ በለጬ</h1>
+            <div class="amharic-title">Seyfe Leyu Beleche</div>
+            <p class="hero-tagline">የፕሪምየም የጥራት ደረጃ  ያላቸው ጫት እና መጠጦች • በየቀኑ ካሉበት ቦታ ይቀርብሎታል</p>
+            <a href="#menu" class="cta-button">ሜኑ ይመልከቱ</a>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>ሜኑ</h2>
+            </div>
+            <p class="section-subtitle">ለፍፁም እርካታዎ በጥንቃቄ የተመረጡ የፕሪምየም ደረጃ ምርቶቻችንን ይመልከቱ</p>
+            
+            <div class="category-cards">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>የጫት ዓይነቶች</h3>
+                        <p>በጥራት የተመረጡ የፕሪምየም ደረጃ የጫት ዓይነቶች። በየቀኑ ካሉበት ቦታ ይቀርብሎታል።</p>
+                        <a href="#khat" class="category-link">ምርጫውን ይመልከቱ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-smoking"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>ሲጋራዎች</h3>
+                        <p>የፕሪምየም ደረጃ የሲጋራ ብራንዶች በሙሉ እና በግማሽ ጥቅል። ለደንበኞቻችን የተሻለ ፍላጎት።</p>
+                        <a href="#cigarettes" class="category-link">ምርጫውን ይመልከቱ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>መጠጦች</h3>
+                        <p>ለእርስዎ የሚስማሙ ቀዝቃዛ ለስላሳ እና ኢነርጂ መጠጦች። በበርካታ አማራጮች የቀረቡ።</p>
+                        <a href="#drinks" class="category-link">ምርጫውን ይመልከቱ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Khat Section (REORGANIZED: Metecho First) -->
+    <section class="menu-section" id="khat">
+        <div class="container">
+            <h3 class="category-title"><i class="fas fa-leaf"></i> የጫት ዓይነቶች</h3>
+            
+            <div class="products-grid">
+                <!-- Metecho (Now First) -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="product-name">መጥቾ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">ለልዩ አጋጣሚዎች እና ለደንበኞቻችን የላይኛው ደረጃ የፕሪምየም ምርጫ።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">600 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">300 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gelemsso -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="product-name">ገለምሶ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">ተመጣጣኝ ተጽዕኖ ያለው የፕሪምየም ጥራት። ከጥራት የተመረጡ አካባቢዎች በየቀኑ አዲስ ማድረሻ።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">470 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">240 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሩብ</span>
+                                <span class="quantity-price">130 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leyu -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="product-name">ልዩ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">ልዩ ባህሪ ያለው ልዩ ምርጫ እና የፕሪምየም ጥራት።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">400 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">200 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beleche (80) -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="product-name">በለጬ (80 ብር)</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">የፕሪምየም ጥራት ያለው በለጬ ጫት።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">አንድ</span>
+                                <span class="quantity-price">80 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beleche (120) -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="product-name">በለጬ (120 ብር)</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">የፕሪምየም ጥራት ያለው በለጬ ጫት።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">አንድ</span>
+                                <span class="quantity-price">120 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nekel -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="product-name">ንቅል</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">የፕሪምየም ጥራት ያለው ንቅል ጫት።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">አንድ</span>
+                                <span class="quantity-price">150 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hirna -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="product-name">ሂርና</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">የፕሪምየም ጥራት ያለው ሂርና ጫት።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">አንድ</span>
+                                <span class="quantity-price">200 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aweday -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="product-name">አወዳይ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">የፕሪምየም ጥራት ያለው አወዳይ ጫት።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">አንድ</span>
+                                <span class="quantity-price">350 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cigarettes Section -->
+    <section class="menu-section" id="cigarettes">
+        <div class="container">
+            <h3 class="category-title"><i class="fas fa-smoking"></i> ሲጋራዎች</h3>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-smoking"></i>
+                        </div>
+                        <div class="product-name">ኒያላ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">የፕሪምየም የአካባቢ የሲጋራ ብራንድ፣ ሙሉ እና ግማሽ ጥቅል ይገኛል።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">200 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">100 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-smoking"></i>
+                        </div>
+                        <div class="product-name">ፕሪምየም</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">ለደንበኞቻችን የፕሪምየም ጥራት ያለው ሲጋራ።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">240 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">120 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-smoking"></i>
+                        </div>
+                        <div class="product-name">ዊንስተን</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">በዓለም አቀፍ ደረጃ የሚታወቅ ብራንድ፣ ሙሉ እና ግማሽ ጥቅል ይገኛል።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">240 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">120 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-smoking"></i>
+                        </div>
+                        <div class="product-name">ኦሪስ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">በመደበኛ ሲጋራ አጥቂዎች መካከል ተወዳጅ የሆነ ጥራት ያለው የሲጋራ ብራንድ።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">240 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">120 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section class="menu-section" id="drinks">
+        <div class="container">
+            <h3 class="category-title"><i class="fas fa-wine-bottle"></i> መጠጦች</h3>
+            
+            <!-- Water -->
+            <h4 style="margin: 40px 0 20px; color: var(--primary); font-size: 1.5rem;">የባቡል ውሃ</h4>
+            <div class="drinks-grid">
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ውሃ 1 ሊትር</span>
+                        <span class="drink-price">30 ብር</span>
+                    </div>
+                    <div class="drink-type">የባቡል ውሃ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ውሃ 2 ሊትር</span>
+                        <span class="drink-price">40 ብር</span>
+                    </div>
+                    <div class="drink-type">የባቡል ውሃ</div>
+                </div>
+            </div>
+            
+            <!-- Soft Drinks -->
+            <h4 style="margin: 40px 0 20px; color: var(--primary); font-size: 1.5rem;">ሶፍት ድሪንኮች</h4>
+            <p style="color: #666; margin-bottom: 20px;">ሁሉም ሶፍት ድሪንኮች 500ሚሊ በባለ ፕላስቲክ መይዣ ይገኛሉ</p>
+            <div class="drinks-grid">
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ኮካኮላ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ፔፕሲ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ፋንታ ኦሬንጅ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ፋንታ አናናስ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ስፕራይት</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ሚሪንዳ ኦሬንጅ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ሚሪንዳ አፕል</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ሚሪንዳ ቶኒክ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ </div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ስቨንአፕ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ </div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>አምቦ ውሃ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ </div>
+                </div>
+            </div>
+            
+            <!-- Energy Drinks -->
+            <h4 style="margin: 40px 0 20px; color: var(--primary); font-size: 1.5rem;">ኢነርጂ ድሪንኮች</h4>
+            <div class="drinks-grid">
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ፕሪዴተር</span>
+                        <span class="drink-price">120 ብር</span>
+                    </div>
+                    <div class="drink-type">ኢነርጂ ድሪንክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>አር-ቡል</span>
+                        <span class="drink-price">120 ብር</span>
+                    </div>
+                    <div class="drink-type">ኢነርጂ ድሪንክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ሪል ቡል</span>
+                        <span class="drink-price">120 ብር</span>
+                    </div>
+                    <div class="drink-type">ኢነርጂ ድሪንክ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Order Section -->
+    <section class="order-section" id="order">
+        <div class="container">
+            <div class="order-container">
+                <div class="order-header">
+                    <h2>ትእዛዝ ያስገቡ</h2>
+                    <p>ወደ አካባቢዎ እናገለግላለን</p>
+                </div>
+                <form class="order-form" id="orderForm">
+                    <div class="form-group">
+                        <label class="form-label" for="customerName">ሙሉ ስም</label>
+                        <input type="text" id="customerName" class="form-control" placeholder="ሙሉ ስምዎን ያስገቡ" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="customerPhone">ስልክ ቁጥር</label>
+                        <input type="tel" id="customerPhone" class="form-control" placeholder="+251 939 86 91 81" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="deliveryAddress">የመላኪያ አድራሻ</label>
+                        <input type="text" id="deliveryAddress" class="form-control" placeholder="ሰላም በር ኮንዶሚኒየም ብሎክ 301" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="deliveryTime">የመላኪያ ጊዜ</label>
+                        <select id="deliveryTime" class="form-control" required>
+                            <option value="">ጊዜ ይምረጡ</option>
+                            <option value="asap">በተቻለ ፍጥነት</option>
+                            <option value="morning">ጠዋት 8:00-12:00</option>
+                            <option value="afternoon">ከሰዓት በኋላ 12:00-5:00</option>
+                            <option value="evening">ማታ 5:00-10:00</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">ምርቶችን ይምረጡ</label>
+                        
+                        <!-- Search Filter -->
+                        <div class="search-filter">
+                            <input type="text" id="itemSearch" class="search-input" placeholder="ምርት ፍለጋ...">
+                        </div>
+                        
+                        <!-- Category Filter -->
+                        <div class="category-filter">
+                            <button type="button" class="category-filter-btn active" data-category="all">ሁሉም</button>
+                            <button type="button" class="category-filter-btn" data-category="khat">ጫት</button>
+                            <button type="button" class="category-filter-btn" data-category="cigarettes">ሲጋራ</button>
+                            <button type="button" class="category-filter-btn" data-category="drinks">መጠጥ</button>
+                            <button type="button" class="category-filter-btn" data-category="others">ሌሎች</button>
+                        </div>
+                        
+                        <!-- Quick Add Buttons -->
+                        <div class="quick-add-buttons">
+                            <button type="button" class="quick-add-btn" data-item="መጥቾ (ሙሉ)" data-price="600">መጥቾ ሙሉ ያክሉ</button>
+                            <button type="button" class="quick-add-btn" data-item="ገለምሶ (ግማሽ)" data-price="240">ገለምሶ ግማሽ ያክሉ</button>
+                            <button type="button" class="quick-add-btn" data-item="ኒያላ (ሙሉ)" data-price="200">ኒያላ ሙሉ ያክሉ</button>
+                            <button type="button" class="quick-add-btn" data-item="ኮካኮላ 500ሚሊ" data-price="80">ኮካኮላ ያክሉ</button>
+                        </div>
+                        
+                        <!-- Interactive Order Items Container -->
+                        <div class="order-items-container" id="interactiveOrderItems">
+                            <!-- All items will be dynamically generated here -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="orderNotes">ተጨማሪ አስተያየት</label>
+                        <textarea id="orderNotes" class="form-control" rows="3" placeholder="ልዩ ጥያቄዎች ወይም የመላኪያ መመሪያዎች"></textarea>
+                    </div>
+                    
+                    <!-- Order Total -->
+                    <div class="order-total">
+                        <div class="total-text">ጠቅላላ ዋጋ</div>
+                        <div class="total-amount" id="totalAmount">0 ብር</div>
+                    </div>
+                    
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> <strong>ትእዛዝዎን ተቀብለናል!</strong> በቅርብ ጊዜ የሚያገለግልዎ ሰራተኛ በስልክ ይደውልሎታል።
+                    </div>
+                    
+                    <!-- Dual Order Buttons -->
+                    <div class="order-buttons">
+                        <button type="button" class="submit-order whatsapp-btn" id="whatsappOrderBtn">
+                            <i class="fab fa-whatsapp"></i> <span>በዋትስአፕ ትእዛዝ ይላኩ</span>
+                        </button>
+                        <button type="button" class="submit-order telegram-btn" id="telegramOrderBtn">
+                            <i class="fab fa-telegram"></i> <span>በቴሌግራም ትእዛዝ ይላኩ</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ሰይፈ ልዩ በለጬ</h3>
+                    <p>የፕሪምየም ደረጃ የጫት ዓይነቶችን እና መጠጦችን የሚያቀርብ ልዩ ድርጅት። በጥራታችን እና በልዩ አገልግሎታችን እንኮራለን።</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ሰላም በር ኮንዶሚኒየም ብሎክ 301</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Summit Condominium, Selam Ber Block 301</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>አድራሻ</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>ስልክ</strong><br>
+                                <a href="tel:+251939869181" style="color: rgba(255,255,255,0.9);">+251 939 86 91 81</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>የዋትስአፕ ትእዛዝ</strong><br>
+                                <a href="https://wa.me/251939869181" style="color: rgba(255,255,255,0.9);" target="_blank">በዋትስአፕ ለማዘዝ</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fab fa-telegram"></i>
+                            <div>
+                                <strong>ቴሌግራም</strong><br>
+                                <a href="https://t.me/+251939869181" style="color: rgba(255,255,255,0.9);" target="_blank">በቴሌግራም ለማዘዝ</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>የስራ ሰዓት</strong><br>
+                                በየቀኑ:ከጠዋት  8:00 - ማታ 10:00
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <strong>የደሊቨሪ አገልግሎት</strong><br>
+                                ሰሚት ኮንዶሚኒየም እና በዙሪያው ባሉ አካባቢዎች
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ፈጣን አገናኞች</h3>
+                    <ul class="contact-info">
+                        <li><a href="#home" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> ዋና ገጽ</a></li>
+                        <li><a href="#menu" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> ሜኑ </a></li>
+                        <li><a href="#khat" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> የጫት ዓይነቶች</a></li>
+                        <li><a href="#cigarettes" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> ሲጋራዎች</a></li>
+                        <li><a href="#drinks" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> መጠጦች</a></li>
+                        <li><a href="#order" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> ትእዛዝዎን ያስገቡ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 ሰይፈ ልዩ በለጬ ሁሉም መብቶች የተጠበቁ ናቸው። | Seyfe Leyu Beleche</p>
+                <p style="margin-top: 10px; font-size: 0.85rem;">"ሰይፈ" ትክክለኛነትን እና ጥራትን የሚያሳይ - የላቀ አገልግሎት</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // All available products data - COMPLETE LIST
+        const allProducts = [
+            // Khat Products (8 total items, now properly organized)
+            { id: 1, name: "መጥቾ (ሙሉ)", price: 600, category: "khat", description: "ለልዩ አጋጣሚዎች የላይኛው ደረጃ" },
+            { id: 2, name: "መጥቾ (ግማሽ)", price: 300, category: "khat", description: "ለልዩ አጋጣሚዎች የላይኛው ደረጃ" },
+            { id: 3, name: "ገለምሶ (ሙሉ)", price: 470, category: "khat", description: "ተመጣጣኝ ተጽዕኖ ያለው ጥራት" },
+            { id: 4, name: "ገለምሶ (ግማሽ)", price: 240, category: "khat", description: "ተመጣጣኝ ተጽዕኖ ያለው ጥራት" },
+            { id: 5, name: "ገለምሶ (ሩብ)", price: 130, category: "khat", description: "ተመጣጣኝ ተጽዕኖ ያለው ጥራት" },
+            { id: 6, name: "ልዩ (ሙሉ)", price: 400, category: "khat", description: "ልዩ ባህሪ ያለው ምርጫ" },
+            { id: 7, name: "ልዩ (ግማሽ)", price: 200, category: "khat", description: "ልዩ ባህሪ ያለው ምርጫ" },
+            { id: 8, name: "በለጬ (80 ብር)", price: 80, category: "khat", description: "የፕሪምየም ጥራት ያለው በለጬ" },
+            { id: 9, name: "በለጬ (120 ብር)", price: 120, category: "khat", description: "የፕሪምየም ጥራት ያለው በለጬ" },
+            { id: 10, name: "ንቅል", price: 150, category: "khat", description: "የፕሪምየም ጥራት ያለው ንቅል" },
+            { id: 11, name: "ሂርና", price: 200, category: "khat", description: "የፕሪምየም ጥራት ያለው ሂርና" },
+            { id: 12, name: "አወዳይ", price: 350, category: "khat", description: "የፕሪምየም ጥራት ያለው አወዳይ" },
+            
+            // Cigarettes (8 items)
+            { id: 13, name: "ኒያላ (ሙሉ)", price: 200, category: "cigarettes", description: "የአካባቢ ብራንድ" },
+            { id: 14, name: "ኒያላ (ግማሽ)", price: 100, category: "cigarettes", description: "የአካባቢ ብራንድ" },
+            { id: 15, name: "ፕሪምየም (ሙሉ)", price: 240, category: "cigarettes", description: "የፕሪምየም ጥራት" },
+            { id: 16, name: "ፕሪምየም (ግማሽ)", price: 120, category: "cigarettes", description: "የፕሪምየም ጥራት" },
+            { id: 17, name: "ዊንስተን (ሙሉ)", price: 240, category: "cigarettes", description: "ዓለም አቀፍ ብራንድ" },
+            { id: 18, name: "ዊንስተን (ግማሽ)", price: 120, category: "cigarettes", description: "ዓለም አቀፍ ብራንድ" },
+            { id: 19, name: "ኦሪስ (ሙሉ)", price: 240, category: "cigarettes", description: "ተወዳጅ የሲጋራ ብራንድ" },
+            { id: 20, name: "ኦሪስ (ግማሽ)", price: 120, category: "cigarettes", description: "ተወዳጅ የሲጋራ ብራንድ" },
+            
+            // Drinks (15 items)
+            { id: 21, name: "ውሃ 1 ሊትር", price: 30, category: "drinks", description: "የባቡል ውሃ" },
+            { id: 22, name: "ውሃ 2 ሊትር", price: 40, category: "drinks", description: "የባቡል ውሃ" },
+            { id: 23, name: "ኮካኮላ 500ሚሊ", price: 80, category: "drinks", description: "500ሚሊ የፕላስቲክ" },
+            { id: 24, name: "ፔፕሲ 500ሚሊ", price: 80, category: "drinks", description: "500ሚሊ የፕላስቲክ" },
+            { id: 25, name: "ፋንታ ኦሬንጅ 500ሚሊ", price: 80, category: "drinks", description: "500ሚሊ የፕላስቲክ" },
+            { id: 26, name: "ፋንታ አናናስ 500ሚሊ", price: 80, category: "drinks", description: "500ሚሊ የፕላስቲክ" },
+            { id: 27, name: "ስፕራይት 500ሚሊ", price: 80, category: "drinks", description: "500ሚሊ የፕላስቲክ" },
+            { id: 28, name: "ሚሪንዳ ኦሬንጅ 500ሚሊ", price: 80, category: "drinks", description: "500ሚሊ የፕላስቲክ" },
+            { id: 29, name: "ሚሪንዳ አፕል 500ሚሊ", price: 80, category: "drinks", description: "500ሚሊ የፕላስቲክ" },
+            { id: 30, name: "ሚሪንዳ ቶኒክ 500ሚሊ", price: 80, category: "drinks", description: "500ሚሊ የፕላስቲክ" },
+            { id: 31, name: "ስቨንአፕ 500ሚሊ", price: 80, category: "drinks", description: "500ሚሊ የፕላስቲክ" },
+            { id: 32, name: "አምቦ ውሃ 500ሚሊ", price: 80, category: "drinks", description: "500ሚሊ የፕላስቲክ" },
+            { id: 33, name: "ፕሪዴተር", price: 120, category: "drinks", description: "ኢነርጂ ድሪንክ" },
+            { id: 34, name: "አር-ቡል", price: 120, category: "drinks", description: "ኢነርጂ ድሪንክ" },
+            { id: 35, name: "ሪል ቡል", price: 120, category: "drinks", description: "ኢነርጂ ድሪንክ" },
+            
+            // Others (1 item)
+            { id: 36, name: "ለውዝ ስር", price: 20, category: "others", description: "ለውዝ ስር" }
+        ];
+
+        // Business contact info
+        const businessInfo = {
+            whatsapp: "251939869181",
+            telegram: "251939869181", // Using phone number for Telegram
+            phone: "+251 939 86 91 81"
+        };
+
+        // Store order items with quantity
+        let orderItems = {};
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Show/hide scroll to top button
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTop > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Scroll to top button
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Render interactive order items
+        function renderOrderItems(filterCategory = 'all', searchTerm = '') {
+            const container = document.getElementById('interactiveOrderItems');
+            container.innerHTML = '';
+            
+            const filteredProducts = allProducts.filter(product => {
+                const matchesCategory = filterCategory === 'all' || product.category === filterCategory;
+                const matchesSearch = searchTerm === '' || 
+                    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    product.description.toLowerCase().includes(searchTerm.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+            
+            if (filteredProducts.length === 0) {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #666; background: #f9f9f9; border-radius: 8px;">
+                        <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 15px; color: #ccc;"></i>
+                        <h3 style="margin-bottom: 10px;">ምንም ምርቶች አልተገኙም</h3>
+                        <p>የፈለጉት ምርት አልተገኘም። የፍለጋ ቃልዎን ያረጋግጡ ወይም ሌላ ምድብ ይምረጡ።</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredProducts.forEach(product => {
+                const quantity = orderItems[product.id] || 0;
+                
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'interactive-item';
+                itemDiv.dataset.category = product.category;
+                
+                itemDiv.innerHTML = `
+                    <div>
+                        <div class="item-name-large">${product.name}</div>
+                        <div style="color: #666; font-size: 0.9rem;">${product.description}</div>
+                    </div>
+                    <div class="item-price-large">${product.price} ብር</div>
+                    <div class="quantity-selector">
+                        <button type="button" class="quantity-btn minus" data-id="${product.id}">-</button>
+                        <input type="number" class="quantity-display" value="${quantity}" min="0" max="20" data-id="${product.id}">
+                        <button type="button" class="quantity-btn plus" data-id="${product.id}">+</button>
+                    </div>
+                `;
+                
+                container.appendChild(itemDiv);
+            });
+            
+            // Add event listeners to quantity buttons
+            document.querySelectorAll('.quantity-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.dataset.id);
+                    const quantityDisplay = document.querySelector(`.quantity-display[data-id="${productId}"]`);
+                    let quantity = parseInt(quantityDisplay.value);
+                    
+                    if (this.classList.contains('minus')) {
+                        quantity = Math.max(0, quantity - 1);
+                    } else if (this.classList.contains('plus')) {
+                        quantity = Math.min(20, quantity + 1);
+                    }
+                    
+                    quantityDisplay.value = quantity;
+                    updateQuantity(productId, quantity);
+                    calculateTotal();
+                });
+            });
+            
+            // Add event listeners to quantity inputs
+            document.querySelectorAll('.quantity-display').forEach(input => {
+                input.addEventListener('input', function() {
+                    const productId = parseInt(this.dataset.id);
+                    let quantity = parseInt(this.value) || 0;
+                    quantity = Math.max(0, Math.min(20, quantity));
+                    this.value = quantity;
+                    updateQuantity(productId, quantity);
+                    calculateTotal();
+                });
+            });
+        }
+        
+        // Update quantity in orderItems
+        function updateQuantity(productId, quantity) {
+            if (quantity > 0) {
+                orderItems[productId] = quantity;
+            } else {
+                delete orderItems[productId];
+            }
+        }
+        
+        // Calculate total
+        function calculateTotal() {
+            let total = 0;
+            
+            Object.keys(orderItems).forEach(productId => {
+                const product = allProducts.find(p => p.id === parseInt(productId));
+                if (product) {
+                    total += product.price * orderItems[productId];
+                }
+            });
+            
+            document.getElementById('totalAmount').textContent = total + ' ብር';
+        }
+        
+        // Category filter
+        document.querySelectorAll('.category-filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.category-filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const category = this.dataset.category;
+                const searchTerm = document.getElementById('itemSearch').value;
+                renderOrderItems(category, searchTerm);
+            });
+        });
+        
+        // Search filter
+        document.getElementById('itemSearch').addEventListener('input', function() {
+            const searchTerm = this.value;
+            const activeCategory = document.querySelector('.category-filter-btn.active').dataset.category;
+            renderOrderItems(activeCategory, searchTerm);
+        });
+        
+        // Quick add buttons
+        document.querySelectorAll('.quick-add-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const itemName = this.dataset.item;
+                const itemPrice = parseInt(this.dataset.price);
+                
+                const product = allProducts.find(p => p.name === itemName && p.price === itemPrice);
+                if (product) {
+                    const currentQuantity = orderItems[product.id] || 0;
+                    const newQuantity = currentQuantity + 1;
+                    
+                    // Update the quantity display
+                    const quantityDisplay = document.querySelector(`.quantity-display[data-id="${product.id}"]`);
+                    if (quantityDisplay) {
+                        quantityDisplay.value = newQuantity;
+                    }
+                    
+                    updateQuantity(product.id, newQuantity);
+                    calculateTotal();
+                    
+                    // Show success feedback
+                    this.style.backgroundColor = 'var(--secondary)';
+                    setTimeout(() => {
+                        this.style.backgroundColor = 'var(--primary)';
+                    }, 500);
+                }
+            });
+        });
+        
+        // Submit order function
+        function submitOrder(platform) {
+            // Get form values
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const address = document.getElementById('deliveryAddress').value;
+            const time = document.getElementById('deliveryTime').value;
+            const notes = document.getElementById('orderNotes').value;
+            
+            // Check if any items are selected
+            const selectedItems = Object.keys(orderItems).filter(id => orderItems[id] > 0);
+            
+            if (selectedItems.length === 0) {
+                alert('እባክዎን ቢያንስ አንድ ምርት ይምረጡ።');
+                return false;
+            }
+            
+            // Validate required fields
+            if (!name || !phone || !address || !time) {
+                alert('እባክዎን ሁሉንም የግዴታ መረጃዎች ይሙሉ።');
+                return false;
+            }
+            
+            // Create order message
+            let orderMessage = `*ሰይፈ ልዩ በለጬ - አዲስ ትእዛዝ*\n\n`;
+            orderMessage += `*ስም:* ${name}\n`;
+            orderMessage += `*ስልክ:* ${phone}\n`;
+            orderMessage += `*አድራሻ:* ${address}\n`;
+            orderMessage += `*የመላኪያ ጊዜ:* ${time}\n\n`;
+            orderMessage += `*ምርቶች:*\n`;
+            
+            let orderTotal = 0;
+            
+            selectedItems.forEach(productId => {
+                const product = allProducts.find(p => p.id === parseInt(productId));
+                const quantity = orderItems[productId];
+                const subtotal = product.price * quantity;
+                
+                orderMessage += `- ${product.name} x ${quantity} = ${subtotal} ብር\n`;
+                orderTotal += subtotal;
+            });
+            
+            orderMessage += `\n*ጠቅላላ:* ${orderTotal} ብር\n`;
+            
+            if (notes) {
+                orderMessage += `\n*ተጨማሪ አስተያየት:* ${notes}\n`;
+            }
+            
+            orderMessage += `\n*የትእዛዝ ሰዓት:* ${new Date().toLocaleString('am-ET')}\n`;
+            orderMessage += `ይህ ትእዛዝ ከድር ገዙ ተልኳል።`;
+            
+            // Create platform URL
+            const encodedMessage = encodeURIComponent(orderMessage);
+            let platformUrl = '';
+            
+            if (platform === 'whatsapp') {
+                platformUrl = `https://wa.me/${businessInfo.whatsapp}?text=${encodedMessage}`;
+            } else if (platform === 'telegram') {
+                // Telegram can use phone number or username
+                platformUrl = `https://t.me/+${businessInfo.telegram}?text=${encodedMessage}`;
+            }
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.innerHTML = `
+                <i class="fas fa-check-circle"></i> 
+                <strong>ትእዛዝዎን ተቀብለናል!</strong> 
+                በ${platform === 'whatsapp' ? 'ዋትስአፕ' : 'ቴሌግራም'} ወደ ድርጅታችን ተልኳል። 
+                በቅርብ ጊዜ የሚያገለግልዎ ሰራተኛ በስልክ ይደውልሎታል።
+            `;
+            successMessage.style.display = 'block';
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                // Reset order items
+                orderItems = {};
+                // Re-render items with zero quantities
+                renderOrderItems();
+                // Reset total
+                calculateTotal();
+                // Hide success message
+                successMessage.style.display = 'none';
+            }, 5000);
+            
+            // Open platform chat in new tab
+            setTimeout(() => {
+                window.open(platformUrl, '_blank');
+            }, 1000);
+            
+            return true;
+        }
+        
+        // WhatsApp order button
+        document.getElementById('whatsappOrderBtn').addEventListener('click', function() {
+            submitOrder('whatsapp');
+        });
+        
+        // Telegram order button
+        document.getElementById('telegramOrderBtn').addEventListener('click', function() {
+            submitOrder('telegram');
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update copyright year
+            const yearSpan = document.querySelector('.copyright p');
+            if(yearSpan) {
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2023', new Date().getFullYear());
+            }
+            
+            // Initialize order items
+            renderOrderItems();
+            calculateTotal();
+            
+            // Add scroll effect on page load
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
+</body>
+</html>
