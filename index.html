@@ -1,0 +1,2849 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ሰይፈ ልዩ በለጬ | ፕሪምየም ጫት እና መጠጦች</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a472a;
+            --secondary: #d4af37;
+            --accent: #c8a415;
+            --light: #f8f8f8;
+            --dark: #0d1f0d;
+            --text: #333333;
+            --border: #e8e6e1;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans Ethiopic', 'Montserrat', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, .logo-text, .section-title, .category-title {
+            font-family: 'Noto Sans Ethiopic', 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 71, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        header.scrolled {
+            padding: 0.7rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover .logo-icon {
+            transform: scale(1.05);
+        }
+        
+        .logo-text {
+            color: white;
+        }
+        
+        .logo-text h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+        
+        .logo-text .amharic-name {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 8px 0;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(13, 31, 13, 0.7), rgba(26, 71, 42, 0.8)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+        
+        .hero .amharic-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .cta-button:hover {
+            color: var(--dark);
+        }
+        
+        .cta-button:hover::before {
+            left: 0;
+        }
+        
+        /* Menu Section */
+        .menu-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 3.2rem;
+            color: var(--primary);
+            display: inline-block;
+            padding: 0 20px;
+            background: white;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border);
+            z-index: 0;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 20px auto 50px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        /* Category Cards */
+        .category-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .category-icon {
+            height: 200px;
+            background: linear-gradient(45deg, var(--primary), #2d5a3d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 4rem;
+        }
+        
+        .category-content {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .category-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .category-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .category-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Product Grid */
+        .category-section {
+            margin-bottom: 100px;
+            scroll-margin-top: 120px;
+        }
+        
+        .category-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .category-title i {
+            color: var(--secondary);
+            font-size: 2rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .product-header {
+            padding: 25px;
+            background: linear-gradient(135deg, var(--primary), #2d5a3d);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        
+        .product-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary);
+        }
+        
+        .product-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .product-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .quantity-options {
+            margin-top: auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .quantity-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .quantity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .quantity-name {
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .quantity-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        /* Drinks Grid */
+        .drinks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .drink-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .drink-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--secondary);
+        }
+        
+        .drink-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .drink-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .drink-price {
+            background: #f0f7f0;
+            color: var(--primary);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 1px solid #d4e8d4;
+        }
+        
+        .drink-type {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        .drink-desc {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 10px;
+        }
+        
+        /* ORDER SECTION - ENHANCED LAYOUT */
+        .order-section {
+            background: linear-gradient(rgba(26, 71, 42, 0.95), rgba(13, 31, 13, 0.98)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0;
+            color: white;
+        }
+        
+        .order-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            min-height: 800px;
+        }
+        
+        .order-header {
+            background: var(--primary);
+            padding: 30px;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+        
+        .order-header h2 {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .order-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+        }
+        
+        /* PRODUCTS BROWSING SIDE */
+        .products-browser {
+            padding: 40px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            overflow-y: auto;
+            max-height: 700px;
+        }
+        
+        .browser-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .browser-tab {
+            padding: 12px 25px;
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text);
+            transition: all 0.3s ease;
+            font-family: 'Noto Sans Ethiopic', sans-serif;
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .browser-tab:hover {
+            border-color: var(--secondary);
+            background: #fffcf0;
+        }
+        
+        .browser-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .browser-tab i {
+            margin-right: 8px;
+        }
+        
+        .products-list {
+            display: none;
+        }
+        
+        .products-list.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product-select-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .product-select-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary);
+        }
+        
+        .product-select-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .product-select-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .product-select-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 8px;
+        }
+        
+        .product-select-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .qty-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--border);
+            background: white;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        
+        .qty-btn:hover {
+            border-color: var(--secondary);
+            background: #fffcf0;
+        }
+        
+        .qty-input {
+            width: 70px;
+            padding: 10px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .qty-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+        
+        .add-to-cart-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+        
+        .add-to-cart-btn:hover {
+            background: #2d5a3d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 71, 42, 0.3);
+        }
+        
+        .add-to-cart-btn i {
+            font-size: 1.1rem;
+        }
+        
+        /* ORDER SUMMARY SIDE */
+        .order-summary {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .order-summary h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .selected-items-container {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 30px;
+            padding-right: 10px;
+        }
+        
+        .selected-items-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .selected-items-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .selected-items-container::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+        
+        .selected-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .selected-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .selected-item-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary);
+            flex: 1;
+        }
+        
+        .remove-item {
+            background: #ffebee;
+            color: #d32f2f;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        
+        .remove-item:hover {
+            background: #ffcdd2;
+            transform: scale(1.1);
+        }
+        
+        .selected-item-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+        }
+        
+        .selected-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .selected-item-qty {
+            font-weight: 600;
+            color: var(--primary);
+            background: #f8f9fa;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .selected-item-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .empty-cart-message {
+            text-align: center;
+            padding: 40px 20px;
+            color: #888;
+            font-style: italic;
+        }
+        
+        .empty-cart-message i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+        
+        .customer-info {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        
+        .customer-info h4 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            font-family: 'Noto Sans Ethiopic', sans-serif;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        .order-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .order-total-section {
+            background: #f0f7f0;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid var(--secondary);
+            margin-top: 20px;
+        }
+        
+        .total-text {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .total-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .submit-order {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex: 1;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-order::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary);
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .submit-order span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .submit-order:hover::before {
+            left: 0;
+        }
+        
+        .submit-order:hover {
+            color: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(26, 71, 42, 0.3);
+        }
+        
+        .clear-cart {
+            background: #f8f9fa;
+            color: var(--text);
+            border: 2px solid #dee2e6;
+            padding: 18px 30px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+        
+        .clear-cart:hover {
+            background: #e9ecef;
+            border-color: #ced4da;
+            transform: translateY(-2px);
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #c3e6cb;
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-section h3 {
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 1200px) {
+            .order-container {
+                grid-template-columns: 1fr;
+                max-width: 800px;
+            }
+            
+            .products-browser {
+                max-height: 500px;
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+            }
+            
+            .order-summary {
+                max-height: 600px;
+                overflow-y: auto;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero .amharic-title {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                gap: 25px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                height: 80vh;
+                padding-top: 150px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero .amharic-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+            
+            .category-title {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .drinks-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .order-container {
+                margin: 0 20px;
+            }
+            
+            .products-browser, .order-summary {
+                padding: 25px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .order-actions {
+                flex-direction: column;
+            }
+            
+            .product-select-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .product-select-price {
+                align-self: flex-start;
+            }
+            
+            .quantity-selector {
+                flex-wrap: wrap;
+            }
+            
+            .add-to-cart-btn {
+                margin-left: 0;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .browser-tabs {
+                flex-direction: column;
+            }
+            
+            .browser-tab {
+                min-width: 100%;
+            }
+            
+            .selected-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .selected-item-details {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo-text .amharic-name {
+                font-size: 1.4rem;
+            }
+            
+            nav a {
+                font-size: 0.95rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero .amharic-title {
+                font-size: 1.5rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .category-card {
+                margin: 0 10px;
+            }
+            
+            .order-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .order-header p {
+                font-size: 1rem;
+            }
+            
+            .products-browser, .order-summary {
+                padding: 20px;
+            }
+            
+            .product-select-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>ሰይፈ ልዩ በለጬ</h1>
+                        <div class="amharic-name">Seyfe Leyu Beleche</div>
+                        <div class="tagline">ፕሪምየም ጫት እና መጠጦች</div>
+                    </div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-home nav-icon"></i> ዋና ገጽ</a></li>
+                        <li><a href="#menu"><i class="fas fa-utensils nav-icon"></i>ሜኑ</a></li>
+                        <li><a href="#khat"><i class="fas fa-leaf nav-icon"></i> ጫት</a></li>
+                        <li><a href="#cigarettes"><i class="fas fa-smoking nav-icon"></i> ሲጋራ</a></li>
+                        <li><a href="#drinks"><i class="fas fa-wine-bottle nav-icon"></i> መጠጥ</a></li>
+                        <li><a href="#order"><i class="fas fa-shopping-cart nav-icon"></i> ትእዛዝ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>ሰይፈ ልዩ በለጬ</h1>
+            <div class="amharic-title">Seyfe Leyu Beleche</div>
+            <p class="hero-tagline">የፕሪምየም የጥራት ደረጃ  ያላቸው ጫት እና መጠጦች • በየቀኑ ካሉበት ቦታ ይቀርብሎታል</p>
+            <a href="#menu" class="cta-button">ሜኑ ይመልከቱ</a>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>ሜኑ</h2>
+            </div>
+            <p class="section-subtitle">ለፍፁም እርካታዎ በጥንቃቄ የተመረጡ የፕሪምየም ደረጃ ምርቶቻችንን ይመልከቱ</p>
+            
+            <div class="category-cards">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>የጫት ዓይነቶች</h3>
+                        <p>በጥራት የተመረጡ የፕሪምየም ደረጃ የጫት ዓይነቶች። በየቀኑ ካሉበት ቦታ ይቀርብሎታል።</p>
+                        <a href="#khat" class="category-link">ምርጫውን ይመልከቱ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-smoking"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>ሲጋራዎች</h3>
+                        <p>የፕሪምየም ደረጃ የሲጋራ ብራንዶች በሙሉ እና በግማሽ ጥቅል። ለደንበኞቻችን የተሻለ ፍላጎት።</p>
+                        <a href="#cigarettes" class="category-link">ምርጫውን ይመልከቱ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>መጠጦች</h3>
+                        <p>ለእርስዎ የሚስማሙ ቀዝቃዛ ለስላሳ እና ኢነርጂ መጠጦች። በበርካታ አማራጮች የቀረቡ።</p>
+                        <a href="#drinks" class="category-link">ምርጫውን ይመልከቱ <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Khat Section -->
+    <section class="menu-section" id="khat">
+        <div class="container">
+            <h3 class="category-title"><i class="fas fa-leaf"></i> የጫት ዓይነቶች</h3>
+            
+            <div class="products-grid">
+                <!-- Gelemsso -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="product-name">ገለምሶ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">ተመጣጣኝ ተጽዕኖ ያለው የፕሪምየም ጥራት። ከጥራት የተመረጡ አካባቢዎች በየቀኑ አዲስ ማድረሻ።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">470 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">240 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሩብ</span>
+                                <span class="quantity-price">130 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leyu -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <div class="product-name">ልዩ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">ልዩ ባህሪ ያለው ልዩ ምርጫ እና የፕሪምየም ጥራት።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">400 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">200 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metecho -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="product-name">መጥቾ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">ለልዩ አጋጣሚዎች እና ለደንበኞቻችን የላይኛው ደረጃ የፕሪምየም ምርጫ።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">600 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">300 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Varieties -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="product-name">ሌሎች ዓይነቶች</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">ለተለያዩ ምርጫዎች እና አጋጣሚዎች ተጨማሪ የፕሪምየም ጫት አማራጮች።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">በለጬ</span>
+                                <span class="quantity-price">80-120 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ንቅል</span>
+                                <span class="quantity-price">150 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሂርና</span>
+                                <span class="quantity-price">200 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">አወዳይ</span>
+                                <span class="quantity-price">350 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cigarettes Section -->
+    <section class="menu-section" id="cigarettes">
+        <div class="container">
+            <h3 class="category-title"><i class="fas fa-smoking"></i> ሲጋራዎች</h3>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-smoking"></i>
+                        </div>
+                        <div class="product-name">ኒያላ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">የፕሪምየም የአካባቢ የሲጋራ ብራንድ፣ ሙሉ እና ግማሽ ጥቅል ይገኛል።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">200 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">100 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-smoking"></i>
+                        </div>
+                        <div class="product-name">ፕሪምየም</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">ለደንበኞቻችን የፕሪምየም ጥራት ያለው ሲጋራ።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">240 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">120 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-smoking"></i>
+                        </div>
+                        <div class="product-name">ዊንስተን</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">በዓለም አቀፍ ደረጃ የሚታወቅ ብራንድ፣ ሙሉ እና ግማሽ ጥቅል ይገኛል።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">240 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">120 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="product-icon">
+                            <i class="fas fa-smoking"></i>
+                        </div>
+                        <div class="product-name">ኦሪስ</div>
+                    </div>
+                    <div class="product-content">
+                        <p class="product-description">በመደበኛ ሲጋራ አጥቂዎች መካከል ተወዳጅ የሆነ ጥራት ያለው የሲጋራ ብራንድ።</p>
+                        <div class="quantity-options">
+                            <div class="quantity-item">
+                                <span class="quantity-name">ሙሉ</span>
+                                <span class="quantity-price">240 ብር</span>
+                            </div>
+                            <div class="quantity-item">
+                                <span class="quantity-name">ግማሽ</span>
+                                <span class="quantity-price">120 ብር</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section class="menu-section" id="drinks">
+        <div class="container">
+            <h3 class="category-title"><i class="fas fa-wine-bottle"></i> መጠጦች</h3>
+            
+            <!-- Water -->
+            <h4 style="margin: 40px 0 20px; color: var(--primary); font-size: 1.5rem;">የባቡል ውሃ</h4>
+            <div class="drinks-grid">
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ውሃ 1 ሊትር</span>
+                        <span class="drink-price">30 ብር</span>
+                    </div>
+                    <div class="drink-type">የባቡል ውሃ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ውሃ 2 ሊትር</span>
+                        <span class="drink-price">40 ብር</span>
+                    </div>
+                    <div class="drink-type">የባቡል ውሃ</div>
+                </div>
+            </div>
+            
+            <!-- Soft Drinks -->
+            <h4 style="margin: 40px 0 20px; color: var(--primary); font-size: 1.5rem;">ሶፍት ድሪንኮች</h4>
+            <p style="color: #666; margin-bottom: 20px;">ሁሉም ሶፍት ድሪንኮች 500ሚሊ በባለ ፕላስቲክ መይዣ ይገኛሉ</p>
+            <div class="drinks-grid">
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ኮካኮላ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ፔፕሲ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ፋንታ ኦሬንጅ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ፋንታ አናናስ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ስፕራይት</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ሚሪንዳ ኦሬንጅ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ሚሪንዳ አፕል</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ሚሪንዳ ቶኒክ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ </div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ስቨንአፕ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ </div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>አምቦ ውሃ</span>
+                        <span class="drink-price">80 ብር</span>
+                    </div>
+                    <div class="drink-type">500ሚሊ የፕላስቲክ </div>
+                </div>
+            </div>
+            
+            <!-- Energy Drinks -->
+            <h4 style="margin: 40px 0 20px; color: var(--primary); font-size: 1.5rem;">ኢነርጂ ድሪንኮች</h4>
+            <div class="drinks-grid">
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ፕሪዴተር</span>
+                        <span class="drink-price">120 ብር</span>
+                    </div>
+                    <div class="drink-type">ኢነርጂ ድሪንክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>አር-ቡል</span>
+                        <span class="drink-price">120 ብር</span>
+                    </div>
+                    <div class="drink-type">ኢነርጂ ድሪንክ</div>
+                </div>
+                
+                <div class="drink-card">
+                    <div class="drink-name">
+                        <span>ሪል ቡል</span>
+                        <span class="drink-price">120 ብር</span>
+                    </div>
+                    <div class="drink-type">ኢነርጂ ድሪንክ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section - COMPLETE VERSION -->
+    <section class="order-section" id="order">
+        <div class="container">
+            <div class="order-container">
+                <div class="order-header">
+                    <h2>ትእዛዝ ያስገቡ</h2>
+                    <p>ምርቶችን በመምረጥ በቀላሉ ወደ አካባቢዎ ያስደርሱ</p>
+                </div>
+                
+                <!-- Left Side: Product Browser -->
+                <div class="products-browser">
+                    <div class="browser-tabs">
+                        <button class="browser-tab active" data-tab="khat">
+                            <i class="fas fa-leaf"></i> ጫት
+                        </button>
+                        <button class="browser-tab" data-tab="cigarettes">
+                            <i class="fas fa-smoking"></i> ሲጋራ
+                        </button>
+                        <button class="browser-tab" data-tab="drinks">
+                            <i class="fas fa-wine-bottle"></i> መጠጥ
+                        </button>
+                        <button class="browser-tab" data-tab="others">
+                            <i class="fas fa-ellipsis-h"></i> ሌሎች
+                        </button>
+                    </div>
+                    
+                    <!-- Khat Products - ALL -->
+                    <div class="products-list active" id="khat-list">
+                        <!-- Gelemsso -->
+                        <div class="product-select-card" data-id="gelemsso-full" data-name="ገለምሶ (ሙሉ)" data-price="470">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ገለምሶ (ሙሉ)</div>
+                                <div class="product-select-price">470 ብር</div>
+                            </div>
+                            <div class="product-select-description">ተመጣጣኝ ተጽዕኖ ያለው የፕሪምየም ጥራት።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="gelemsso-half" data-name="ገለምሶ (ግማሽ)" data-price="240">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ገለምሶ (ግማሽ)</div>
+                                <div class="product-select-price">240 ብር</div>
+                            </div>
+                            <div class="product-select-description">ተመጣጣኝ ተጽዕኖ ያለው የፕሪምየም ጥራት።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="gelemsso-quarter" data-name="ገለምሶ (ሩብ)" data-price="130">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ገለምሶ (ሩብ)</div>
+                                <div class="product-select-price">130 ብር</div>
+                            </div>
+                            <div class="product-select-description">ተመጣጣኝ ተጽዕኖ ያለው የፕሪምየም ጥራት።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Leyu -->
+                        <div class="product-select-card" data-id="leyu-full" data-name="ልዩ (ሙሉ)" data-price="400">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ልዩ (ሙሉ)</div>
+                                <div class="product-select-price">400 ብር</div>
+                            </div>
+                            <div class="product-select-description">ልዩ ባህሪ ያለው ልዩ ምርጫ እና የፕሪምየም ጥራት።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="leyu-half" data-name="ልዩ (ግማሽ)" data-price="200">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ልዩ (ግማሽ)</div>
+                                <div class="product-select-price">200 ብር</div>
+                            </div>
+                            <div class="product-select-description">ልዩ ባህሪ ያለው ልዩ ምርጫ እና የፕሪምየም ጥራት።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Metecho -->
+                        <div class="product-select-card" data-id="metecho-full" data-name="መጥቾ (ሙሉ)" data-price="600">
+                            <div class="product-select-header">
+                                <div class="product-select-name">መጥቾ (ሙሉ)</div>
+                                <div class="product-select-price">600 ብር</div>
+                            </div>
+                            <div class="product-select-description">ለልዩ አጋጣሚዎች እና ለደንበኞቻችን የላይኛው ደረጃ የፕሪምየም ምርጫ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="metecho-half" data-name="መጥቾ (ግማሽ)" data-price="300">
+                            <div class="product-select-header">
+                                <div class="product-select-name">መጥቾ (ግማሽ)</div>
+                                <div class="product-select-price">300 ብር</div>
+                            </div>
+                            <div class="product-select-description">ለልዩ አጋጣሚዎች እና ለደንበኞቻችን የላይኛው ደረጃ የፕሪምየም ምርጫ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Other Khat Varieties -->
+                        <div class="product-select-card" data-id="beleche-80" data-name="በለጬ (80 ብር)" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">በለጬ (80 ብር)</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">በለጬ ጫት በሚፈልጉበት ጊዜ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="beleche-120" data-name="በለጬ (120 ብር)" data-price="120">
+                            <div class="product-select-header">
+                                <div class="product-select-name">በለጬ (120 ብር)</div>
+                                <div class="product-select-price">120 ብር</div>
+                            </div>
+                            <div class="product-select-description">በለጬ ጫት በሚፈልጉበት ጊዜ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="nikkel" data-name="ንቅል" data-price="150">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ንቅል</div>
+                                <div class="product-select-price">150 ብር</div>
+                            </div>
+                            <div class="product-select-description">ንቅል ጫት።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="hirna" data-name="ሂርና" data-price="200">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ሂርና</div>
+                                <div class="product-select-price">200 ብር</div>
+                            </div>
+                            <div class="product-select-description">ሂርና ጫት።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="awuday" data-name="አወዳይ" data-price="350">
+                            <div class="product-select-header">
+                                <div class="product-select-name">አወዳይ</div>
+                                <div class="product-select-price">350 ብር</div>
+                            </div>
+                            <div class="product-select-description">አወዳይ ጫት።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cigarettes Products - ALL -->
+                    <div class="products-list" id="cigarettes-list">
+                        <!-- Niyala -->
+                        <div class="product-select-card" data-id="niyala-full" data-name="ኒያላ (ሙሉ)" data-price="200">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ኒያላ (ሙሉ)</div>
+                                <div class="product-select-price">200 ብር</div>
+                            </div>
+                            <div class="product-select-description">የፕሪምየም የአካባቢ የሲጋራ ብራንድ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="niyala-half" data-name="ኒያላ (ግማሽ)" data-price="100">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ኒያላ (ግማሽ)</div>
+                                <div class="product-select-price">100 ብር</div>
+                            </div>
+                            <div class="product-select-description">የፕሪምየም የአካባቢ የሲጋራ ብራንድ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Premium -->
+                        <div class="product-select-card" data-id="premium-full" data-name="ፕሪምየም (ሙሉ)" data-price="240">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ፕሪምየም (ሙሉ)</div>
+                                <div class="product-select-price">240 ብር</div>
+                            </div>
+                            <div class="product-select-description">ለደንበኞቻችን የፕሪምየም ጥራት ያለው ሲጋራ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="premium-half" data-name="ፕሪምየም (ግማሽ)" data-price="120">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ፕሪምየም (ግማሽ)</div>
+                                <div class="product-select-price">120 ብር</div>
+                            </div>
+                            <div class="product-select-description">ለደንበኞቻችን የፕሪምየም ጥራት ያለው ሲጋራ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Winston -->
+                        <div class="product-select-card" data-id="winston-full" data-name="ዊንስተን (ሙሉ)" data-price="240">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ዊንስተን (ሙሉ)</div>
+                                <div class="product-select-price">240 ብር</div>
+                            </div>
+                            <div class="product-select-description">በዓለም አቀፍ ደረጃ የሚታወቅ ብራንድ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="winston-half" data-name="ዊንስተን (ግማሽ)" data-price="120">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ዊንስተን (ግማሽ)</div>
+                                <div class="product-select-price">120 ብር</div>
+                            </div>
+                            <div class="product-select-description">በዓለም አቀፍ ደረጃ የሚታወቅ ብራንድ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Oris -->
+                        <div class="product-select-card" data-id="oris-full" data-name="ኦሪስ (ሙሉ)" data-price="240">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ኦሪስ (ሙሉ)</div>
+                                <div class="product-select-price">240 ብር</div>
+                            </div>
+                            <div class="product-select-description">በመደበኛ ሲጋራ አጥቂዎች መካከል ተወዳጅ የሆነ ጥራት ያለው የሲጋራ ብራንድ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="oris-half" data-name="ኦሪስ (ግማሽ)" data-price="120">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ኦሪስ (ግማሽ)</div>
+                                <div class="product-select-price">120 ብር</div>
+                            </div>
+                            <div class="product-select-description">በመደበኛ ሲጋራ አጥቂዎች መካከል ተወዳጅ የሆነ ጥራት ያለው የሲጋራ ብራንድ።</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Drinks Products - ALL -->
+                    <div class="products-list" id="drinks-list">
+                        <!-- Water -->
+                        <div class="product-select-card" data-id="water-1l" data-name="ውሃ 1 ሊትር" data-price="30">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ውሃ 1 ሊትር</div>
+                                <div class="product-select-price">30 ብር</div>
+                            </div>
+                            <div class="product-select-description">የባቡል ውሃ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="water-2l" data-name="ውሃ 2 ሊትር" data-price="40">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ውሃ 2 ሊትር</div>
+                                <div class="product-select-price">40 ብር</div>
+                            </div>
+                            <div class="product-select-description">የባቡል ውሃ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Soft Drinks -->
+                        <div class="product-select-card" data-id="coca-cola" data-name="ኮካኮላ 500ሚሊ" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ኮካኮላ 500ሚሊ</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">500ሚሊ የፕላስቲክ መይዣ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="pepsi" data-name="ፔፕሲ 500ሚሊ" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ፔፕሲ 500ሚሊ</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">500ሚሊ የፕላስቲክ መይዣ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="fanta-orange" data-name="ፋንታ ኦሬንጅ 500ሚሊ" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ፋንታ ኦሬንጅ 500ሚሊ</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">500ሚሊ የፕላስቲክ መይዣ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="fanta-ananas" data-name="ፋንታ አናናስ 500ሚሊ" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ፋንታ አናናስ 500ሚሊ</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">500ሚሊ የፕላስቲክ መይዣ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="sprite" data-name="ስፕራይት 500ሚሊ" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ስፕራይት 500ሚሊ</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">500ሚሊ የፕላስቲክ መይዣ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="mirinda-orange" data-name="ሚሪንዳ ኦሬንጅ 500ሚሊ" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ሚሪንዳ ኦሬንጅ 500ሚሊ</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">500ሚሊ የፕላስቲክ መይዣ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="mirinda-apple" data-name="ሚሪንዳ አፕል 500ሚሊ" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ሚሪንዳ አፕል 500ሚሊ</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">500ሚሊ የፕላስቲክ መይዣ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="mirinda-tonic" data-name="ሚሪንዳ ቶኒክ 500ሚሊ" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ሚሪንዳ ቶኒክ 500ሚሊ</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">500ሚሊ የፕላስቲክ መይዣ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="seven-up" data-name="ስቨንአፕ 500ሚሊ" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ስቨንአፕ 500ሚሊ</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">500ሚሊ የፕላስቲክ መይዣ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="ambo-water" data-name="አምቦ ውሃ 500ሚሊ" data-price="80">
+                            <div class="product-select-header">
+                                <div class="product-select-name">አምቦ ውሃ 500ሚሊ</div>
+                                <div class="product-select-price">80 ብር</div>
+                            </div>
+                            <div class="product-select-description">500ሚሊ የፕላስቲክ መይዣ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Energy Drinks -->
+                        <div class="product-select-card" data-id="predator" data-name="ፕሪዴተር" data-price="120">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ፕሪዴተር</div>
+                                <div class="product-select-price">120 ብር</div>
+                            </div>
+                            <div class="product-select-description">ኢነርጂ ድሪንክ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="r-bull" data-name="አር-ቡል" data-price="120">
+                            <div class="product-select-header">
+                                <div class="product-select-name">አር-ቡል</div>
+                                <div class="product-select-price">120 ብር</div>
+                            </div>
+                            <div class="product-select-description">ኢነርጂ ድሪንክ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-select-card" data-id="real-bull" data-name="ሪል ቡል" data-price="120">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ሪል ቡል</div>
+                                <div class="product-select-price">120 ብር</div>
+                            </div>
+                            <div class="product-select-description">ኢነርጂ ድሪንክ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Others Products -->
+                    <div class="products-list" id="others-list">
+                        <div class="product-select-card" data-id="lwz" data-name="ለውዝ ስር" data-price="20">
+                            <div class="product-select-header">
+                                <div class="product-select-name">ለውዝ ስር</div>
+                                <div class="product-select-price">20 ብር</div>
+                            </div>
+                            <div class="product-select-description">ለጫት ተጨማሪ</div>
+                            <div class="quantity-selector">
+                                <div class="qty-btn minus">-</div>
+                                <input type="number" class="qty-input" value="1" min="1" max="10">
+                                <div class="qty-btn plus">+</div>
+                                <button class="add-to-cart-btn">
+                                    <i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Side: Order Summary -->
+                <div class="order-summary">
+                    <h3>የትእዛዝ ማጠቃለያ</h3>
+                    
+                    <div class="selected-items-container" id="selectedItemsContainer">
+                        <div class="empty-cart-message">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>ምንም ምርት አልተመረጠም። ምርቶችን ለመመረጥ በላይ ያለውን የምርት ዝርዝር ይመልከቱ።</p>
+                        </div>
+                    </div>
+                    
+                    <div class="customer-info">
+                        <h4>የደንበኛ መረጃ</h4>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="customerName">ሙሉ ስም</label>
+                                <input type="text" id="customerName" class="form-control" placeholder="ሙሉ ስምዎን ያስገቡ" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="customerPhone">ስልክ ቁጥር</label>
+                                <input type="tel" id="customerPhone" class="form-control" placeholder="+251 939 86 91 81" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="deliveryAddress">የመላኪያ አድራሻ</label>
+                            <input type="text" id="deliveryAddress" class="form-control" placeholder="ሰላም በር ኮንዶሚኒየም ብሎክ 301" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="deliveryTime">የመላኪያ ጊዜ</label>
+                            <select id="deliveryTime" class="form-control" required>
+                                <option value="">ጊዜ ይምረጡ</option>
+                                <option value="asap">በተቻለ ፍጥነት</option>
+                                <option value="morning">ጠዋት 8:00-12:00</option>
+                                <option value="afternoon">ከሰዓት በኋላ 12:00-5:00</option>
+                                <option value="evening">ማታ 5:00-10:00</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="orderNotes">ተጨማሪ አስተያየት</label>
+                            <textarea id="orderNotes" class="form-control" rows="3" placeholder="ልዩ ጥያቄዎች ወይም የመላኪያ መመሪያዎች"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="order-total-section">
+                        <div class="total-text">ጠቅላላ ዋጋ</div>
+                        <div class="total-amount" id="totalAmount">0 ብር</div>
+                    </div>
+                    
+                    <div class="order-actions">
+                        <button class="clear-cart" id="clearCartBtn">
+                            <i class="fas fa-trash-alt"></i> ትእዛዝ አጥፋ
+                        </button>
+                        <button class="submit-order" id="submitOrderBtn">
+                            <i class="fab fa-whatsapp"></i> <span>በዋትስአፕ ትእዛዝ ይላኩ</span>
+                        </button>
+                    </div>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i> <strong>ትእዛዝዎን ተቀብለናል!</strong> በቅርብ ጊዜ የሚያገለግልዎ ሰራተኛ በስልክ ይደውልሎታል።
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ሰይፈ ልዩ በለጬ</h3>
+                    <p>የፕሪምየም ደረጃ የጫት ዓይነቶችን እና መጠጦችን የሚያቀርብ ልዩ ድርጅት። በጥራታችን እና በልዩ አገልግሎታችን እንኮራለን።</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ሰላም በር ኮንዶሚኒየም ብሎክ 301</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Summit Condominium, Selam Ber Block 301</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>አድራሻ</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>ስልክ</strong><br>
+                                <a href="tel:+251939869181" style="color: rgba(255,255,255,0.9);">+251 939 86 91 81</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <strong>የዋትስአፕ ትእዛዝ</strong><br>
+                                <a href="https://wa.me/251939869181" style="color: rgba(255,255,255,0.9);" target="_blank">በዋትስአፕ ለማዘዝ</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>የስራ ሰዓት</strong><br>
+                                በየቀኑ:ከጠዋት  8:00 - ማታ 10:00
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <strong>የደሊቨሪ አገልግሎት</strong><br>
+                                ሰሚት ኮንዶሚኒየም እና በዙሪያው ባሉ አካባቢዎች
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ፈጣን አገናኞች</h3>
+                    <ul class="contact-info">
+                        <li><a href="#home" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> ዋና ገጽ</a></li>
+                        <li><a href="#menu" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> ሜኑ </a></li>
+                        <li><a href="#khat" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> የጫት ዓይነቶች</a></li>
+                        <li><a href="#cigarettes" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> ሲጋራዎች</a></li>
+                        <li><a href="#drinks" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> መጠጦች</a></li>
+                        <li><a href="#order" style="color: rgba(255,255,255,0.9);"><i class="fas fa-chevron-right"></i> ትእዛዝዎን ያስገቡ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 ሰይፈ ልዩ በለጬ ሁሉም መብቶች የተጠበቁ ናቸው። | Seyfe Leyu Beleche</p>
+                <p style="margin-top: 10px; font-size: 0.85rem;">"ሰይፈ" ትክክለኛነትን እና ጥራትን የሚያሳይ - የላቀ አገልግሎት</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Show/hide scroll to top button
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTop > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Scroll to top button
+        document.getElementById('scrollTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // ENHANCED ORDER SYSTEM
+        const browserTabs = document.querySelectorAll('.browser-tab');
+        const productLists = document.querySelectorAll('.products-list');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        const selectedItemsContainer = document.getElementById('selectedItemsContainer');
+        const totalAmount = document.getElementById('totalAmount');
+        const clearCartBtn = document.getElementById('clearCartBtn');
+        const submitOrderBtn = document.getElementById('submitOrderBtn');
+        const successMessage = document.getElementById('successMessage');
+        
+        let selectedItems = [];
+        
+        // Tab switching
+        browserTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs
+                browserTabs.forEach(t => t.classList.remove('active'));
+                productLists.forEach(list => list.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                document.getElementById(`${tabId}-list`).classList.add('active');
+            });
+        });
+        
+        // Quantity controls
+        document.querySelectorAll('.qty-btn.minus').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const qtyInput = this.nextElementSibling;
+                let value = parseInt(qtyInput.value);
+                if (value > 1) {
+                    qtyInput.value = value - 1;
+                }
+            });
+        });
+        
+        document.querySelectorAll('.qty-btn.plus').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const qtyInput = this.previousElementSibling;
+                let value = parseInt(qtyInput.value);
+                if (value < 10) {
+                    qtyInput.value = value + 1;
+                }
+            });
+        });
+        
+        // Add to cart functionality
+        addToCartButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const productCard = this.closest('.product-select-card');
+                const productId = productCard.getAttribute('data-id');
+                const productName = productCard.getAttribute('data-name');
+                const productPrice = parseInt(productCard.getAttribute('data-price'));
+                const productQty = parseInt(productCard.querySelector('.qty-input').value);
+                
+                // Check if item already exists in cart
+                const existingItemIndex = selectedItems.findIndex(item => item.id === productId);
+                
+                if (existingItemIndex !== -1) {
+                    // Update existing item quantity
+                    selectedItems[existingItemIndex].quantity += productQty;
+                    selectedItems[existingItemIndex].total = selectedItems[existingItemIndex].price * selectedItems[existingItemIndex].quantity;
+                    
+                    // Update the existing item in DOM
+                    const existingItemElement = document.querySelector(`[data-item-id="${productId}"]`);
+                    if (existingItemElement) {
+                        existingItemElement.querySelector('.selected-item-qty').textContent = selectedItems[existingItemIndex].quantity;
+                        existingItemElement.querySelector('.selected-item-price').textContent = selectedItems[existingItemIndex].total + ' ብር';
+                    }
+                } else {
+                    // Add new item
+                    const newItem = {
+                        id: productId,
+                        name: productName,
+                        price: productPrice,
+                        quantity: productQty,
+                        total: productPrice * productQty
+                    };
+                    
+                    selectedItems.push(newItem);
+                    
+                    // Add to DOM
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'selected-item';
+                    itemElement.setAttribute('data-item-id', productId);
+                    itemElement.innerHTML = `
+                        <div class="selected-item-header">
+                            <div class="selected-item-name">${productName}</div>
+                            <button class="remove-item" data-id="${productId}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="selected-item-details">
+                            <div class="selected-item-quantity">
+                                <span>ብዛት:</span>
+                                <span class="selected-item-qty">${productQty}</span>
+                            </div>
+                            <div class="selected-item-price">${newItem.total} ብር</div>
+                        </div>
+                    `;
+                    
+                    // Remove empty cart message if it's the first item
+                    const emptyCartMessage = selectedItemsContainer.querySelector('.empty-cart-message');
+                    if (emptyCartMessage) {
+                        emptyCartMessage.remove();
+                    }
+                    
+                    selectedItemsContainer.prepend(itemElement);
+                }
+                
+                // Update total
+                updateTotal();
+                
+                // Reset quantity to 1
+                productCard.querySelector('.qty-input').value = 1;
+                
+                // Show success animation
+                this.innerHTML = '<i class="fas fa-check"></i> ተጨምሯል!';
+                this.style.background = '#4caf50';
+                
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-cart-plus"></i> ወደ ትእዛዝ ጨምር';
+                    this.style.background = '';
+                }, 1500);
+            });
+        });
+        
+        // Remove item from cart
+        selectedItemsContainer.addEventListener('click', function(e) {
+            if (e.target.closest('.remove-item')) {
+                const removeBtn = e.target.closest('.remove-item');
+                const itemId = removeBtn.getAttribute('data-id');
+                
+                // Remove from array
+                selectedItems = selectedItems.filter(item => item.id !== itemId);
+                
+                // Remove from DOM
+                const itemElement = document.querySelector(`[data-item-id="${itemId}"]`);
+                if (itemElement) {
+                    itemElement.remove();
+                }
+                
+                // Show empty cart message if no items left
+                if (selectedItems.length === 0) {
+                    const emptyCartMessage = document.createElement('div');
+                    emptyCartMessage.className = 'empty-cart-message';
+                    emptyCartMessage.innerHTML = `
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>ምንም ምርት አልተመረጠም። ምርቶችን ለመመረጥ በላይ ያለውን የምርት ዝርዝር ይመልከቱ።</p>
+                    `;
+                    selectedItemsContainer.appendChild(emptyCartMessage);
+                }
+                
+                // Update total
+                updateTotal();
+            }
+        });
+        
+        // Clear cart
+        clearCartBtn.addEventListener('click', function() {
+            if (selectedItems.length > 0) {
+                if (confirm('ሁሉንም የተመረጡ ምርቶች ማጥፋት ይፈልጋሉ?')) {
+                    selectedItems = [];
+                    
+                    // Clear DOM
+                    selectedItemsContainer.innerHTML = '';
+                    
+                    // Add empty cart message
+                    const emptyCartMessage = document.createElement('div');
+                    emptyCartMessage.className = 'empty-cart-message';
+                    emptyCartMessage.innerHTML = `
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>ምንም ምርት አልተመረጠም። ምርቶችን ለመመረጥ በላይ ያለውን የምርት ዝርዝር ይመልከቱ።</p>
+                    `;
+                    selectedItemsContainer.appendChild(emptyCartMessage);
+                    
+                    // Update total
+                    updateTotal();
+                }
+            }
+        });
+        
+        // Update total amount
+        function updateTotal() {
+            let total = selectedItems.reduce((sum, item) => sum + item.total, 0);
+            totalAmount.textContent = total + ' ብር';
+        }
+        
+        // Submit order
+        submitOrderBtn.addEventListener('click', function() {
+            // Get form values
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const address = document.getElementById('deliveryAddress').value;
+            const time = document.getElementById('deliveryTime').value;
+            const notes = document.getElementById('orderNotes').value;
+            
+            // Validation
+            if (!name || !phone || !address || !time) {
+                alert('እባክዎ ሁሉንም የመረጃ ሳጥኖች ይሙሉ።');
+                return;
+            }
+            
+            if (selectedItems.length === 0) {
+                alert('እባክዎን ቢያንስ አንድ ምርት ይምረጡ።');
+                return;
+            }
+            
+            // Create WhatsApp message
+            let whatsappMessage = `*ሰይፈ ልዩ በለጬ - አዲስ ትእዛዝ*\n\n`;
+            whatsappMessage += `*ስም:* ${name}\n`;
+            whatsappMessage += `*ስልክ:* ${phone}\n`;
+            whatsappMessage += `*አድራሻ:* ${address}\n`;
+            whatsappMessage += `*የመላኪያ ጊዜ:* ${time}\n\n`;
+            whatsappMessage += `*ምርቶች:*\n`;
+            
+            selectedItems.forEach(item => {
+                whatsappMessage += `- ${item.name} x ${item.quantity} = ${item.total} ብር\n`;
+            });
+            
+            const orderTotal = selectedItems.reduce((sum, item) => sum + item.total, 0);
+            whatsappMessage += `\n*ጠቅላላ:* ${orderTotal} ብር\n`;
+            
+            if (notes) {
+                whatsappMessage += `\n*ተጨማሪ አስተያየት:* ${notes}\n`;
+            }
+            
+            whatsappMessage += `\n*የትእዛዝ ሰዓት:* ${new Date().toLocaleString('am-ET')}\n`;
+            whatsappMessage += `ይህ ትእዛዝ ከድር ገዙ ተልኳል።`;
+            
+            // Create WhatsApp URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappUrl = `https://wa.me/251939869181?text=${encodedMessage}`;
+            
+            // Show success message
+            successMessage.style.display = 'block';
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Open WhatsApp after delay
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+                
+                // Reset form after 5 seconds
+                setTimeout(() => {
+                    // Clear cart
+                    selectedItems = [];
+                    selectedItemsContainer.innerHTML = '';
+                    const emptyCartMessage = document.createElement('div');
+                    emptyCartMessage.className = 'empty-cart-message';
+                    emptyCartMessage.innerHTML = `
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>ምንም ምርት አልተመረጠም። ምርቶችን ለመመረጥ በላይ ያለውን የምርት ዝርዝር ይመልከቱ።</p>
+                    `;
+                    selectedItemsContainer.appendChild(emptyCartMessage);
+                    
+                    // Reset form
+                    document.getElementById('customerName').value = '';
+                    document.getElementById('customerPhone').value = '';
+                    document.getElementById('deliveryAddress').value = '';
+                    document.getElementById('deliveryTime').value = '';
+                    document.getElementById('orderNotes').value = '';
+                    
+                    // Update total
+                    updateTotal();
+                    
+                    // Hide success message
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 1000);
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTotal();
+            
+            // Update copyright year
+            const yearSpan = document.querySelector('.copyright p');
+            if(yearSpan) {
+                yearSpan.innerHTML = yearSpan.innerHTML.replace('2023', new Date().getFullYear());
+            }
+            
+            // Add scroll effect on page load
+            window.dispatchEvent(new Event('scroll'));
+        });
+    </script>
+</body>
+</html>
